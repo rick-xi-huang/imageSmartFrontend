@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba9c2cfa-38bf-481d-8edc-e803beeed297" name="Default Changelist" comment="Implemented basic image upload frontend">
-      <change afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Signin/signin.js" afterDir="false" />
+    <list default="true" id="ba9c2cfa-38bf-481d-8edc-e803beeed297" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageLinkForm/ImageLinkForm.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Signin/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signin/Signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/Upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +116,18 @@
       <workItem from="1582518463293" duration="165000" />
       <workItem from="1582612467905" duration="5057000" />
       <workItem from="1582698444133" duration="6110000" />
+      <workItem from="1583535147369" duration="105000" />
+      <workItem from="1583734366089" duration="4627000" />
+      <workItem from="1583778046558" duration="3375000" />
+      <workItem from="1583816046709" duration="4424000" />
+      <workItem from="1583820839190" duration="3463000" />
+      <workItem from="1583825836297" duration="800000" />
+      <workItem from="1583881245881" duration="5658000" />
+      <workItem from="1583899646531" duration="867000" />
+      <workItem from="1583901315943" duration="8946000" />
+      <workItem from="1583950666225" duration="613000" />
+      <workItem from="1583953740610" duration="2000" />
+      <workItem from="1585092158055" duration="1513000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented basic image upload frontend">
       <created>1582444599601</created>
@@ -118,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582444599601</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented basic user login and register">
+      <created>1583535180598</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583535180598</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,17 +165,18 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Implemented basic image upload frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented basic image upload frontend" />
+    <MESSAGE value="Implemented basic user login and register" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented basic user login and register" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582444662656">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583900132349">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582444662656" />
-    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1582445339841">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583900132349" />
+    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1583535179548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582445339841" />
+    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583535179548" />
     <state x="376" y="102" key="EnvironmentVariablesDialog" timestamp="1582329781519">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -159,21 +185,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582444448291" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1582704570445">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1583951280415">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582704570445" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1582704570445">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1583951280415">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582704570445" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1582704570445">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1583951280415">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582704570445" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1582704570445">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1583951280415">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582704570445" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
   </component>
 </project>

@@ -1,25 +1,34 @@
 import React, {Component} from 'react';
-import Navigation from './components/Navigation/Navigation';
-import Signin from "./components/Signin/signin";
+import Particles from 'react-particles-js';
+import Navigation from "./components/Navigation/Navigation";
+import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
-import Logo from "./components/Logo/Logo";
-import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Upload from "./components/Upload/Upload";
 import './App.css';
 
 
 const initialState = {
-    input: '',
-    imageUrl: '',
     route: 'init',
     isSignedIn: false,
     user: {
         id: '',
         name: '',
         email: '',
+        joined:'',
     }
 };
 
+const particlesOptions = {
+    particles: {
+        number: {
+            value: 30,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        }
+    }
+};
 
 class App extends Component {
 
@@ -28,14 +37,14 @@ class App extends Component {
         this.state = initialState;
     }
 
-    onInputChange = (event) => {
-        console.log(event["target"]["value"]);
-        this.setState({input: event["target"]["value"]});
-    };
-
-    onButtonSubmit = () => {
-        console.log("submitted");
-        this.setState({imageUrl: this.state.input});
+    loadUser = (data) => {
+        this.setState({user: {
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                joined: data.joined,
+                images: data.images,
+            }})
     };
 
     onRouteChange = (route) => {
@@ -48,33 +57,40 @@ class App extends Component {
     };
 
     render() {
-        const {isSignedIn, route} = this.state;
-        if(route === "init" ){
-            return (
-                <div className="App">
-                <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                </div>
-            )
-        }else if(route === "signin"){
+        const {isSignedIn, route, user} = this.state;
+
+        if(route === "signin"){
            return (
                <div className="App">
+                   <Particles className='particles'
+                              params={particlesOptions}
+                   />
                    <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                   <Signin onRouteChange = {this.onRouteChange} />
+                   <Signin loadUser={this.loadUser} onRouteChange = {this.onRouteChange} />
                </div>
            )
-        }else if(route === "register"){
+        }
+        else if(route === "register"){
             return (
                 <div className="App">
                     <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                    <Register onRouteChange = {this.onRouteChange} />
+                    <Register loadUser={this.loadUser} onRouteChange = {this.onRouteChange} />
                 </div>
             )
-        }else if(route === "home"){
+        }
+        else if(route === "home"){
             return (
             <div className="App">
                 <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                <Upload />
+                <Upload user = {user} />
             </div>
+            )
+        }
+        else{
+            return (
+                <div className="App">
+                    <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
+                </div>
             )
         }
     }

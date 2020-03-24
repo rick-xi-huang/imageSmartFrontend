@@ -9,7 +9,7 @@ class Upload extends Component {
         super(props);
         this.state = {
             uploading: false,
-            images: []
+            images: this.props.user.images,
         }
     }
 
@@ -23,12 +23,13 @@ class Upload extends Component {
             formData.append(i, file)
         });
 
+        formData.append("email", this.props.user.email);
+
         this.setState({
             uploading: false,
-            images: files
         });
 
-        fetch("http://localhost:3000/image-upload", {
+        fetch("http://localhost:3001/image-upload", {
             method: 'POST',
             body: formData
         })
@@ -36,7 +37,7 @@ class Upload extends Component {
             .then(images => {
                 this.setState({
                     uploading: false,
-                    images: images,
+                    images: this.state.images.concat(images),
                 })
             })
     };
@@ -53,10 +54,13 @@ class Upload extends Component {
             switch(true) {
                 case uploading:
                     return <Spinner />;
-                case images.length > 0:
-                    return <Images images={images} removeImage={this.removeImage} />;
                 default:
-                    return <Buttons onChange={this.onChange} />
+                    return (
+                    <div>
+                    <Images images={images} removeImage={this.removeImage} />;
+                    <Buttons onChange={this.onChange} />
+                    </div>
+                    )
             }
         };
 
