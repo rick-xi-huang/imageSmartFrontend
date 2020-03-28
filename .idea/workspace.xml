@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba9c2cfa-38bf-481d-8edc-e803beeed297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ImageView/Image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImageView/Image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImageView/ImageList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImageView/ImageView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageLinkForm/ImageLinkForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signin/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signin/Signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Upload/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Upload/Upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/UploadImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Images.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/Spinner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Upload/Upload.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -44,7 +42,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../image_ai_backend" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Web Project/robofriends" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -127,7 +125,13 @@
       <workItem from="1583901315943" duration="8946000" />
       <workItem from="1583950666225" duration="613000" />
       <workItem from="1583953740610" duration="2000" />
-      <workItem from="1585092158055" duration="1513000" />
+      <workItem from="1585092158055" duration="2653000" />
+      <workItem from="1585116902988" duration="4133000" />
+      <workItem from="1585155383534" duration="18563000" />
+      <workItem from="1585179091116" duration="954000" />
+      <workItem from="1585197382363" duration="5479000" />
+      <workItem from="1585287711346" duration="7555000" />
+      <workItem from="1585334534114" duration="18052000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented basic image upload frontend">
       <created>1582444599601</created>
@@ -143,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583535180598</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented basic user images display">
+      <created>1585093699272</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585093699272</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,40 +177,45 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Implemented basic image upload frontend" />
     <MESSAGE value="Implemented basic user login and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented basic user login and register" />
+    <MESSAGE value="Implemented basic user images display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented basic user images display" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583900132349">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583900132349" />
-    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1583535179548">
+    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1585093697746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583535179548" />
+    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585093697746" />
     <state x="376" y="102" key="EnvironmentVariablesDialog" timestamp="1582329781519">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="376" y="102" key="EnvironmentVariablesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582329781519" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1582444448291">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1585094215174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582444448291" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1583951280415">
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585094215174" />
+    <state width="1259" height="161" key="GridCell.Tab.0.bottom" timestamp="1585295906270">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1583951280415">
+    <state width="1259" height="161" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585295906270" />
+    <state width="1259" height="161" key="GridCell.Tab.0.center" timestamp="1585295906270">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1583951280415">
+    <state width="1259" height="161" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585295906270" />
+    <state width="1259" height="161" key="GridCell.Tab.0.left" timestamp="1585295906270">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1583951280415">
+    <state width="1259" height="161" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585295906270" />
+    <state width="1259" height="161" key="GridCell.Tab.0.right" timestamp="1585295906270">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583951280415" />
+    <state width="1259" height="161" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585295906270" />
+    <state x="303" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585175264823">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1585175264823" />
   </component>
 </project>

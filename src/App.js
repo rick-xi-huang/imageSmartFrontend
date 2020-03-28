@@ -3,7 +3,7 @@ import Particles from 'react-particles-js';
 import Navigation from "./components/Navigation/Navigation";
 import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
-import Upload from "./components/Upload/Upload";
+import ImageView from "./components/ImageView/ImageView";
 import './App.css';
 
 
@@ -82,7 +82,7 @@ class App extends Component {
             return (
             <div className="App">
                 <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                <Upload user = {user} />
+                <ImageView user = {user} />
             </div>
             )
         }

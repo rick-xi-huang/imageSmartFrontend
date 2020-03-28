@@ -1,0 +1,19 @@
+.bounding-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    position: relative;
+    width: 60%;
+    height: auto;
+}
