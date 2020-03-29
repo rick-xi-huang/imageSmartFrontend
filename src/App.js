@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
 import ImageView from "./components/ImageView/ImageView";
+import Banner from "./components/Banner/Banner";
 import './App.css';
 
 
@@ -14,7 +15,7 @@ const initialState = {
         id: '',
         name: '',
         email: '',
-        joined:'',
+        joined: '',
     }
 };
 
@@ -38,61 +39,62 @@ class App extends Component {
     }
 
     loadUser = (data) => {
-        this.setState({user: {
+        this.setState({
+            user: {
                 id: data.id,
                 name: data.name,
                 email: data.email,
                 joined: data.joined,
                 images: data.images,
-            }})
+            }
+        });
+        this.setState({isSignedIn: true})
+    };
+
+    loadTrialUser = ( ) => {
+        this.setState({
+            user: {
+                id: "test",
+                name: "test",
+                email: "test",
+                joined: "test",
+                images: [],
+            }
+        });
     };
 
     onRouteChange = (route) => {
         if (route === 'init') {
             this.setState(initialState)
-        } else if (route === 'home') {
-            this.setState({isSignedIn: true})
+        } else {
+            this.setState({route: route});
         }
-        this.setState({route: route});
     };
 
     render() {
         const {isSignedIn, route, user} = this.state;
 
-        if(route === "signin"){
-           return (
-               <div className="App">
-                   <Particles className='particles'
-                              params={particlesOptions}
-                   />
-                   <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                   <Signin loadUser={this.loadUser} onRouteChange = {this.onRouteChange} />
-               </div>
-           )
-        }
-        else if(route === "register"){
-            return (
-                <div className="App">
-                    <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                    <Register loadUser={this.loadUser} onRouteChange = {this.onRouteChange} />
-                </div>
-            )
-        }
-        else if(route === "home"){
-            return (
+        return (
             <div className="App">
-                <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                <ImageView user = {user} />
+                <Particles className='particles'
+                           params={particlesOptions}
+                />
+                <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+
+                {(route === "signin") &&
+                <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                }
+                {(route === "register") &&
+                <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                }
+                {(route === "home") &&
+                <ImageView user={user}/>
+                }
+                {(route === "init") &&
+                <Banner loadTrialUser={this.loadTrialUser} onRouteChange={this.onRouteChange}/>
+                }
             </div>
-            )
-        }
-        else{
-            return (
-                <div className="App">
-                    <Navigation isSignedIn = {isSignedIn} onRouteChange = {this.onRouteChange} />
-                </div>
-            )
-        }
+        )
     }
 }
 

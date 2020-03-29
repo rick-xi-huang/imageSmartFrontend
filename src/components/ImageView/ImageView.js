@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Spinner from "./Spinner";
 import ImageList from "./ImageList";
 import UploadImage from "./UploadImage";
 
@@ -26,10 +25,6 @@ class ImageView extends Component {
 
         formData.append("email", this.props.user.email);
 
-        this.setState({
-            uploading: false,
-        });
-
         fetch("http://localhost:3001/image-upload", {
             method: 'POST',
             body: formData
@@ -39,12 +34,15 @@ class ImageView extends Component {
                 this.setState({
                     uploading: false,
                     images: this.state.images.concat(images),
-                })
+                });
+                this.setState({
+                    uploading: false,
+                });
             })
     };
 
     removeImage = id => {
-        fetch("http://localhost:3001/image-delete" + "?id=" + id, {
+        fetch("http://localhost:3001/image-delete?id=" + id, {
             method: 'DELETE',
         })
             .then(() =>
@@ -55,16 +53,13 @@ class ImageView extends Component {
     };
 
     detectFace = image => {
-        fetch("http://localhost:3001/face-detection" + "?url=" + image.url, {
+        fetch("http://localhost:3001/face-detection?url=" + image.url, {
             method: 'GET',
         })
             .then((response) => {
                     return response.json();
                 })
             .then((response) => {
-                  console.log(response[0].boundingPoly.vertices);
-                 console.log(response[1].boundingPoly.vertices);
-                 console.log(response[2].boundingPoly.vertices);
                   this.setState({transformation: {
                           ...this.state.transformation,
                           [image.public_id]: response
@@ -76,7 +71,7 @@ class ImageView extends Component {
     };
 
     detectObject = image => {
-        fetch("http://localhost:3001/object-detection" + "?url=" + image.url, {
+        fetch("http://localhost:3001/object-detection?url=" + image.url, {
             method: 'GET',
         })
             .then((response) => {
@@ -93,20 +88,39 @@ class ImageView extends Component {
             })
     };
 
+    detectLandmark = image => {
+        fetch("http://localhost:3001/landmark-detection?url=" + image.url, {
+            method: 'GET',
+        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((response) => {
+                this.setState({transformation: {
+                        ...this.state.transformation,
+                        [image.public_id]: response
+                    }});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    };
+
     render() {
         const { uploading, images, transformation } = this.state;
 
         return (
             <div>
-                <div className='buttons'>
+                <div>
                     <ImageList
                         images={images}
                         removeImage={this.removeImage}
                         detectFace={this.detectFace}
                         detectObject={this.detectObject}
+                        detectLandmark={this.detectLandmark}
                         transformation={transformation}
                     />
-                    <UploadImage uploadImage={this.uploadImage} />
+                    <UploadImage uploadImage={this.uploadImage} uploading={uploading} />
                 </div>
             </div>
         )
