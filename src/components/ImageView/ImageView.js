@@ -25,7 +25,7 @@ class ImageView extends Component {
 
         formData.append("email", this.props.user.email);
 
-        fetch("http://localhost:3001/image-upload", {
+        fetch("https://image-smart.herokuapp.com/image-upload", {
             method: 'POST',
             body: formData
         })
@@ -42,7 +42,7 @@ class ImageView extends Component {
     };
 
     removeImage = id => {
-        fetch("http://localhost:3001/image-delete?id=" + id, {
+        fetch("https://image-smart.herokuapp.com/image-delete?id=" + id, {
             method: 'DELETE',
         })
             .then(() =>
@@ -53,7 +53,7 @@ class ImageView extends Component {
     };
 
     detectFace = image => {
-        fetch("http://localhost:3001/face-detection?url=" + image.url, {
+        fetch("https://image-smart.herokuapp.com/face-detection?url=" + image.url, {
             method: 'GET',
         })
             .then((response) => {
@@ -71,7 +71,7 @@ class ImageView extends Component {
     };
 
     detectObject = image => {
-        fetch("http://localhost:3001/object-detection?url=" + image.url, {
+        fetch("https://image-smart.herokuapp.com/object-detection?url=" + image.url, {
             method: 'GET',
         })
             .then((response) => {
@@ -89,7 +89,7 @@ class ImageView extends Component {
     };
 
     detectLandmark = image => {
-        fetch("http://localhost:3001/landmark-detection?url=" + image.url, {
+        fetch("https://image-smart.herokuapp.com/landmark-detection?url=" + image.url, {
             method: 'GET',
         })
             .then((response) => {
