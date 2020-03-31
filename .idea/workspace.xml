@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ba9c2cfa-38bf-481d-8edc-e803beeed297" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageView/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/Image.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +132,7 @@
       <workItem from="1585585339166" duration="1684000" />
       <workItem from="1585604162268" duration="537000" />
       <workItem from="1585607417364" duration="319000" />
-      <workItem from="1585638212467" duration="2729000" />
+      <workItem from="1585638212467" duration="3620000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented basic image upload frontend">
       <created>1582444599601</created>
@@ -184,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585586340258</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="optimized production build">
+      <created>1585641088004</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585641088004</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,17 +217,18 @@
     <MESSAGE value="Implemented basic UI" />
     <MESSAGE value="Ready to deploy 1" />
     <MESSAGE value="Fixed IE support issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed IE support issue" />
+    <MESSAGE value="optimized production build" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimized production build" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583900132349">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583900132349" />
-    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1585586339508">
+    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1585641087208">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585586339508" />
+    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585641087208" />
     <state x="376" y="102" key="EnvironmentVariablesDialog" timestamp="1582329781519">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
