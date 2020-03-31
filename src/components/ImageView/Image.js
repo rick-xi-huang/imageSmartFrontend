@@ -6,7 +6,7 @@ import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
 import {faCameraRetro} from '@fortawesome/free-solid-svg-icons'
 import {faLandmark} from '@fortawesome/free-solid-svg-icons'
 
-const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
+const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
 
     let textCard, objectBoxes, display = [];
 
@@ -14,14 +14,14 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
         transformation[image.public_id].forEach((object, i) => {
             if (object.name) {
                 display.push(
-                    <p>{
+                    <p key={i}>{
                         " Object " + (i + 1) + "\n" +
                         object.name + "   " + object.score.toFixed(2)
                     }
                     </p>);
             } else if (object.joyLikelihood) {
                 display.push(
-                    <p> {" Face " + (i + 1) + "\n" +
+                    <p key={i}> {" Face " + (i + 1) + "\n" +
                     " Joy: " + object.joyLikelihood +
                     " Anger: " + object.angerLikelihood +
                     " Sorrow: " + object.sorrowLikelihood +
@@ -30,20 +30,20 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
                     </p>
                 )
             } else if (object.description) {
-                display.push(<p> {object.description + "    " + object.score.toFixed(2)} </p>)
+                display.push(<p key={i}> {object.description + "    " + object.score.toFixed(2)} </p>)
             }
         });
         textCard = <article className="center mw5 mw6-ns hidden ba mv4">
             <h1 className="f4 bg-near-black white mv0 pv2 ph3">From your AI friend</h1>
             <div className="pa3 bt">
-                <p className="f6 f5-ns lh-copy measure mv0">
+                <div className="f6 f5-ns lh-copy measure mv0">
                     {/*{JSON.stringify(display)}*/}
                     {display}
-                </p>
+                </div>
             </div>
         </article>;
         let vertices = [];
-        let verticesNomalized = []
+        let verticesNomalized = [];
         transformation[image.public_id].forEach(object => {
             if (object.boundingPoly.normalizedVertices.length > 0) {
                 verticesNomalized.push(object.boundingPoly.normalizedVertices);
@@ -54,9 +54,9 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
         let boxes = [];
         let w = image.width;
         let h = image.height;
-        for (const vertice of verticesNomalized) {
+        verticesNomalized.forEach((vertice, index) => {
             boxes.push(
-                <div className='bounding-box'
+                <div key={index} className='bounding-box'
                      style={{
                          top: (vertice[1].y) * 100 + "%",
                          right: (1 - vertice[1].x) * 100 + "%",
@@ -64,10 +64,10 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
                          left: (vertice[3].x) * 100 + "%",
                      }}></div>
             )
-        }
-        for (const vertice of vertices) {
+        });
+        vertices.forEach((vertice, index) => {
             boxes.push(
-                <div className='bounding-box'
+                <div key={index} className='bounding-box'
                      style={{
                          top: (vertice[1].y / h) * 100 + "%",
                          right: (1 - vertice[1].x / w) * 100 + "%",
@@ -75,7 +75,7 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
                          left: (vertice[3].x / w) * 100 + "%",
                      }}></div>
             )
-        }
+        });
         objectBoxes = boxes;
     } else {
         textCard = <div/>;
@@ -84,7 +84,7 @@ const Image = ({key, image, removeImage, detectFace, detectObject, detectLandmar
 
 
     return (
-        <div key={key} >
+        <div>
 
             <div className='container center'>
                 <img className='image shadow-1' src={image.secure_url} alt=''/>
