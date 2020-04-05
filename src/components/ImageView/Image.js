@@ -5,43 +5,44 @@ import {faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
 import {faCameraRetro} from '@fortawesome/free-solid-svg-icons'
 import {faLandmark} from '@fortawesome/free-solid-svg-icons'
+import Description from "./Description";
 
 const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
 
     let textCard, objectBoxes, display = [];
 
     if (transformation[image.public_id]) {
-        transformation[image.public_id].forEach((object, i) => {
-            if (object.name) {
-                display.push(
-                    <p key={i}>{
-                        " Object " + (i + 1) + "\n" +
-                        object.name + "   " + object.score.toFixed(2)
-                    }
-                    </p>);
-            } else if (object.joyLikelihood) {
-                display.push(
-                    <p key={i}> {" Face " + (i + 1) + "\n" +
-                    " Joy: " + object.joyLikelihood +
-                    " Anger: " + object.angerLikelihood +
-                    " Sorrow: " + object.sorrowLikelihood +
-                    " Surprise: " + object.surpriseLikelihood
-                    }
-                    </p>
-                )
-            } else if (object.description) {
-                display.push(<p key={i}> {object.description + "    " + object.score.toFixed(2)} </p>)
-            }
-        });
-        textCard = <article className="center mw5 mw6-ns hidden ba mv4">
-            <h1 className="f4 bg-near-black white mv0 pv2 ph3">From your AI friend</h1>
-            <div className="pa3 bt">
-                <div className="f6 f5-ns lh-copy measure mv0">
-                    {/*{JSON.stringify(display)}*/}
-                    {display}
-                </div>
-            </div>
-        </article>;
+    //     transformation[image.public_id].forEach((object, i) => {
+    //         if (object.name) {
+    //             display.push(
+    //                 <p key={i}>{
+    //                     " Object " + (i + 1) + "\n" +
+    //                     object.name + "   " + object.score.toFixed(2)
+    //                 }
+    //                 </p>);
+    //         } else if (object.joyLikelihood) {
+    //             display.push(
+    //                 <p key={i}> {" Face " + (i + 1) + "\n" +
+    //                 " Joy: " + object.joyLikelihood +
+    //                 " Anger: " + object.angerLikelihood +
+    //                 " Sorrow: " + object.sorrowLikelihood +
+    //                 " Surprise: " + object.surpriseLikelihood
+    //                 }
+    //                 </p>
+    //             )
+    //         } else if (object.description) {
+    //             display.push(<p key={i}> {object.description + "    " + object.score.toFixed(2)} </p>)
+    //         }
+    //     });
+    //     textCard = <article className="center mw5 mw6-ns hidden ba mv4">
+    //         <h1 className="f4 bg-near-black white mv0 pv2 ph3">From your AI friend</h1>
+    //         <div className="pa3 bt">
+    //             <div className="f6 f5-ns lh-copy measure mv0">
+    //                 {/*{JSON.stringify(display)}*/}
+    //                 {display}
+    //             </div>
+    //         </div>
+    //     </article>;
         let vertices = [];
         let verticesNomalized = [];
         transformation[image.public_id].forEach(object => {
@@ -62,7 +63,7 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
                          right: (1 - vertice[1].x) * 100 + "%",
                          bottom: (1 - vertice[3].y) * 100 + "%",
                          left: (vertice[3].x) * 100 + "%",
-                     }}></div>
+                     }}>{index + 1}</div>
             )
         });
         vertices.forEach((vertice, index) => {
@@ -73,12 +74,12 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
                          right: (1 - vertice[1].x / w) * 100 + "%",
                          bottom: (1 - vertice[3].y / h) * 100 + "%",
                          left: (vertice[3].x / w) * 100 + "%",
-                     }}></div>
+                     }}>{index + 1}</div>
             )
         });
         objectBoxes = boxes;
     } else {
-        textCard = <div/>;
+        // textCard = <div/>;
         objectBoxes = <div/>;
     }
 
@@ -120,7 +121,7 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
                         <span className="f6 ml3 pr2">Delete</span>
                     </div>
                 </div>
-            {textCard}
+            <Description analysis={transformation[image.public_id]} />
         </div>
     )
 };

@@ -5,6 +5,8 @@
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
+    text-align: end;
+    color: #149df2;
 }
 
 .image {
