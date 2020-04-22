@@ -9,7 +9,7 @@ class ImageView extends Component {
         this.state = {
             uploading: false,
             images: this.props.user.images,
-            transformation: {}
+            transformations: {}
         }
     }
 
@@ -61,9 +61,9 @@ class ImageView extends Component {
             })
             .then((response) => {
                 console.log(response);
-                this.setState({transformation: {
-                        ...this.state.transformation,
-                        [image.public_id]: response
+                this.setState({transformations: {
+                        ...this.state.transformations,
+                        [image.public_id]: {content: response, type: type}
                     }});
             })
             .catch((err) => {
@@ -72,7 +72,7 @@ class ImageView extends Component {
     };
 
     render() {
-        const { uploading, images, transformation } = this.state;
+        const { uploading, images, transformations } = this.state;
 
         return (
             <div>
@@ -81,7 +81,7 @@ class ImageView extends Component {
                         images={images}
                         removeImage={this.removeImage}
                         detectImage={this.detectImage}
-                        transformation={transformation}
+                        transformations={transformations}
                     />
                     <UploadImage uploadImage={this.uploadImage} uploading={uploading} />
                 </div>

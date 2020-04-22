@@ -3,7 +3,7 @@ import Image from "./Image";
 import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const ImageList = ({images, removeImage, detectImage, transformation}) => {
+const ImageList = ({images, removeImage, detectImage, transformations}) => {
 
     if(images.length > 0) {
         return (
@@ -13,7 +13,7 @@ const ImageList = ({images, removeImage, detectImage, transformation}) => {
                         detectImage={detectImage}
                         removeImage={removeImage}
                         image={image}
-                        transformation={transformation}
+                        transformation={transformations[image.public_id]}
                     />
                 );
             })

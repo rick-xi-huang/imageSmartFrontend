@@ -13,10 +13,10 @@ const Image = ({image, removeImage, detectImage, transformation}) => {
 
     let objectBoxes;
 
-    if (transformation[image.public_id]) {
+    if (transformation) {
         let vertices = [];
         let verticesNomalized = [];
-        transformation[image.public_id].forEach(object => {
+        transformation["content"].forEach(object => {
             if(!object.boundingPoly){
             } else if (object.boundingPoly.normalizedVertices.length > 0) {
                 verticesNomalized.push(object.boundingPoly.normalizedVertices);
@@ -104,7 +104,7 @@ const Image = ({image, removeImage, detectImage, transformation}) => {
                     <span className="f6 ml3 pr2">Delete</span>
                 </div>
             </div>
-            <Description analysis={transformation[image.public_id]}/>
+            <Description transformation={transformation} />
         </div>
     )
 };
