@@ -60,65 +60,11 @@ class ImageView extends Component {
                 return response.json();
             })
             .then((response) => {
-                this.setState({transformation: {
-                        ...this.state.transformation,
-                        [image.public_id]: response
-                    }});
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    };
-
-    detectFace = image => {
-        fetch("https://image-smart.herokuapp.com/face-detection?url=" + image.url, {
-            method: 'GET',
-        })
-            .then((response) => {
-                    return response.json();
-                })
-            .then((response) => {
-                  this.setState({transformation: {
-                          ...this.state.transformation,
-                          [image.public_id]: response
-                      }});
-            })
-            .catch((err) => {
-            console.log(err);
-        })
-    };
-
-    detectObject = image => {
-        fetch("https://image-smart.herokuapp.com/object-detection?url=" + image.url, {
-            method: 'GET',
-        })
-            .then((response) => {
-                    return response.json()
-                })
-            .then((response) => {
-                this.setState({transformation: {
-                        ...this.state.transformation,
-                        [image.public_id]: response
-                    }});
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    };
-
-    detectLandmark = image => {
-        fetch("https://image-smart.herokuapp.com/landmark-detection?url=" + image.url, {
-            method: 'GET',
-        })
-            .then((response) => {
-                return response.json()
-            })
-            .then((response) => {
-                this.setState({transformation: {
-                        ...this.state.transformation,
-                        [image.public_id]: response
-                    }});
                 console.log(response);
+                this.setState({transformation: {
+                        ...this.state.transformation,
+                        [image.public_id]: response
+                    }});
             })
             .catch((err) => {
                 console.log(err);
@@ -135,9 +81,6 @@ class ImageView extends Component {
                         images={images}
                         removeImage={this.removeImage}
                         detectImage={this.detectImage}
-                        detectFace={this.detectFace}
-                        detectObject={this.detectObject}
-                        detectLandmark={this.detectLandmark}
                         transformation={transformation}
                     />
                     <UploadImage uploadImage={this.uploadImage} uploading={uploading} />

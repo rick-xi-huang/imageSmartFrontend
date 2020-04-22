@@ -27,10 +27,10 @@ const Description = ({analysis}) => {
                             <th className="fw6 pa3">Confidence</th>
                         </tr>
                         }
-                        {  (type === "landmark" ) &&
+                        {  (type === "description") &&
                         <tr>
                             <th className="fw6 pa3">ID</th>
-                            <th className="fw6 pa3">Landmark</th>
+                            <th className="fw6 pa3">Description</th>
                             <th className="fw6 pa3">Confidence</th>
                         </tr>
                         }
@@ -78,7 +78,7 @@ const Description = ({analysis}) => {
                     <td className="pa3">{object.score.toFixed(2)}</td>
                 </tr>
             );
-            table = generateTable("landmark", rows);
+            table = generateTable("description", rows);
         }
 
         return <article className="center mw5 mw6-ns hidden ba mv4">

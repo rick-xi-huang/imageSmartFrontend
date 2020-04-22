@@ -5,9 +5,11 @@ import {faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
 import {faCameraRetro} from '@fortawesome/free-solid-svg-icons'
 import {faLandmark} from '@fortawesome/free-solid-svg-icons'
+import {faTextHeight} from '@fortawesome/free-solid-svg-icons'
+import {faTag} from '@fortawesome/free-solid-svg-icons'
 import Description from "./Description";
 
-const Image = ({image, removeImage, detectImage, detectFace, detectObject, detectLandmark, transformation}) => {
+const Image = ({image, removeImage, detectImage, transformation}) => {
 
     let objectBoxes;
 
@@ -15,7 +17,8 @@ const Image = ({image, removeImage, detectImage, detectFace, detectObject, detec
         let vertices = [];
         let verticesNomalized = [];
         transformation[image.public_id].forEach(object => {
-            if (object.boundingPoly.normalizedVertices.length > 0) {
+            if(!object.boundingPoly){
+            } else if (object.boundingPoly.normalizedVertices.length > 0) {
                 verticesNomalized.push(object.boundingPoly.normalizedVertices);
             } else if (object.boundingPoly.vertices.length > 0) {
                 vertices.push(object.boundingPoly.vertices);
@@ -83,10 +86,16 @@ const Image = ({image, removeImage, detectImage, detectFace, detectObject, detec
                     <span className="f6 ml3 pr2">Landmark</span>
                 </div>
                 <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => detectImage(image, "label")}
+                >
+                    <FontAwesomeIcon icon={faTag} size='2x'/>
+                    <span className="f6 ml3 pr2">Label</span>
+                </div>
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
                      onClick={() => detectImage(image, "text")}
                 >
-                    <FontAwesomeIcon icon={faLandmark} size='2x'/>
-                    <span className="f6 ml3 pr2">Landmark</span>
+                    <FontAwesomeIcon icon={faTextHeight} size='2x'/>
+                    <span className="f6 ml3 pr2">Text</span>
                 </div>
                 <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
                      onClick={() => removeImage(image.public_id)}
