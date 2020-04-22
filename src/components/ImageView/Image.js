@@ -48,7 +48,6 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
         });
         objectBoxes = boxes;
     } else {
-        // textCard = <div/>;
         objectBoxes = <div/>;
     }
 
