@@ -4,6 +4,8 @@
     <list default="true" id="ba9c2cfa-38bf-481d-8edc-e803beeed297" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ImageView/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageView/ImageList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/ImageList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageView/ImageView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageView/ImageView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +160,8 @@
       <workItem from="1586059072467" duration="2270000" />
       <workItem from="1586563849819" duration="21000" />
       <workItem from="1586733873882" duration="42000" />
-      <workItem from="1587538805636" duration="460000" />
+      <workItem from="1587538805636" duration="999000" />
+      <workItem from="1587580997266" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented basic image upload frontend">
       <created>1582444599601</created>
@@ -230,7 +233,28 @@
       <option name="project" value="LOCAL" />
       <updated>1586061348382</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Reformated image analysis display">
+      <created>1587539277238</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587539277238</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Reformated image analysis display">
+      <created>1587539337679</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587539337679</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Reformated image analysis display">
+      <created>1587539475382</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587539475382</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,10 +290,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1583900132349" />
-    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1587539336903">
+    <state x="257" y="0" key="CommitChangelistDialog2" timestamp="1587539474611">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1587539336903" />
+    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1587539474611" />
     <state x="376" y="102" key="EnvironmentVariablesDialog" timestamp="1582329781519">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

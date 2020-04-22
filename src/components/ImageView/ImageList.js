@@ -3,13 +3,14 @@ import Image from "./Image";
 import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const ImageList = ({images, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
+const ImageList = ({images, removeImage, detectImage, detectFace, detectObject, detectLandmark, transformation}) => {
 
     if(images.length > 0) {
         return (
             images.map((image, i) => {
                 return (<Image
                         key={i}
+                        detectImage={detectImage}
                         detectFace={detectFace}
                         detectObject={detectObject}
                         detectLandmark={detectLandmark}

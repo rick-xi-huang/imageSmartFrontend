@@ -52,6 +52,24 @@ class ImageView extends Component {
             )
     };
 
+    detectImage = (image,type) => {
+        fetch(`https://image-smart.herokuapp.com/image-detection?url=${image.url}&type=${type}`, {
+            method: 'GET',
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                this.setState({transformation: {
+                        ...this.state.transformation,
+                        [image.public_id]: response
+                    }});
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    };
+
     detectFace = image => {
         fetch("https://image-smart.herokuapp.com/face-detection?url=" + image.url, {
             method: 'GET',
@@ -100,6 +118,7 @@ class ImageView extends Component {
                         ...this.state.transformation,
                         [image.public_id]: response
                     }});
+                console.log(response);
             })
             .catch((err) => {
                 console.log(err);
@@ -115,6 +134,7 @@ class ImageView extends Component {
                     <ImageList
                         images={images}
                         removeImage={this.removeImage}
+                        detectImage={this.detectImage}
                         detectFace={this.detectFace}
                         detectObject={this.detectObject}
                         detectLandmark={this.detectLandmark}

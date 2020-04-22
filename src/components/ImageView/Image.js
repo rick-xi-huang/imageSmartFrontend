@@ -7,7 +7,7 @@ import {faCameraRetro} from '@fortawesome/free-solid-svg-icons'
 import {faLandmark} from '@fortawesome/free-solid-svg-icons'
 import Description from "./Description";
 
-const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
+const Image = ({image, removeImage, detectImage, detectFace, detectObject, detectLandmark, transformation}) => {
 
     let objectBoxes;
 
@@ -62,34 +62,40 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
 
             </div>
 
-                <div className="w-100 ph3 bg-transparent">
+            <div className="w-100 ph3 bg-transparent">
 
-                    <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
-                         onClick={() => detectFace(image)}
-                    >
-                        <FontAwesomeIcon icon={faSmileBeam} size='2x'/>
-                        <span className="f6 ml3 pr2">Face</span>
-                    </div>
-                    <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
-                         onClick={() => detectObject(image)}
-                    >
-                        <FontAwesomeIcon icon={faCameraRetro} size='2x'/>
-                        <span className="f6 ml3 pr2">Object</span>
-                    </div>
-                    <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
-                         onClick={() => detectLandmark(image)}
-                    >
-                        <FontAwesomeIcon icon={faLandmark} size='2x'/>
-                        <span className="f6 ml3 pr2">Landmark</span>
-                    </div>
-                    <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
-                        onClick={() => removeImage(image.public_id)}
-                    >
-                        <FontAwesomeIcon icon={faTrashAlt} size='2x'/>
-                        <span className="f6 ml3 pr2">Delete</span>
-                    </div>
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => detectImage(image, "face")}
+                >
+                    <FontAwesomeIcon icon={faSmileBeam} size='2x'/>
+                    <span className="f6 ml3 pr2">Face</span>
                 </div>
-            <Description analysis={transformation[image.public_id]} />
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => detectImage(image, "object")}
+                >
+                    <FontAwesomeIcon icon={faCameraRetro} size='2x'/>
+                    <span className="f6 ml3 pr2">Object</span>
+                </div>
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => detectImage(image, "landmark")}
+                >
+                    <FontAwesomeIcon icon={faLandmark} size='2x'/>
+                    <span className="f6 ml3 pr2">Landmark</span>
+                </div>
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => detectImage(image, "text")}
+                >
+                    <FontAwesomeIcon icon={faLandmark} size='2x'/>
+                    <span className="f6 ml3 pr2">Landmark</span>
+                </div>
+                <div className="link bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2 pointer"
+                     onClick={() => removeImage(image.public_id)}
+                >
+                    <FontAwesomeIcon icon={faTrashAlt} size='2x'/>
+                    <span className="f6 ml3 pr2">Delete</span>
+                </div>
+            </div>
+            <Description analysis={transformation[image.public_id]}/>
         </div>
     )
 };
