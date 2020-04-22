@@ -9,7 +9,7 @@ import Description from "./Description";
 
 const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, transformation}) => {
 
-    let textCard, objectBoxes, display = [];
+    let objectBoxes;
 
     if (transformation[image.public_id]) {
         let vertices = [];
