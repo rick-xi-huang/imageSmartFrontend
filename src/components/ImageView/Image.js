@@ -12,37 +12,6 @@ const Image = ({image, removeImage, detectFace, detectObject, detectLandmark, tr
     let textCard, objectBoxes, display = [];
 
     if (transformation[image.public_id]) {
-    //     transformation[image.public_id].forEach((object, i) => {
-    //         if (object.name) {
-    //             display.push(
-    //                 <p key={i}>{
-    //                     " Object " + (i + 1) + "\n" +
-    //                     object.name + "   " + object.score.toFixed(2)
-    //                 }
-    //                 </p>);
-    //         } else if (object.joyLikelihood) {
-    //             display.push(
-    //                 <p key={i}> {" Face " + (i + 1) + "\n" +
-    //                 " Joy: " + object.joyLikelihood +
-    //                 " Anger: " + object.angerLikelihood +
-    //                 " Sorrow: " + object.sorrowLikelihood +
-    //                 " Surprise: " + object.surpriseLikelihood
-    //                 }
-    //                 </p>
-    //             )
-    //         } else if (object.description) {
-    //             display.push(<p key={i}> {object.description + "    " + object.score.toFixed(2)} </p>)
-    //         }
-    //     });
-    //     textCard = <article className="center mw5 mw6-ns hidden ba mv4">
-    //         <h1 className="f4 bg-near-black white mv0 pv2 ph3">From your AI friend</h1>
-    //         <div className="pa3 bt">
-    //             <div className="f6 f5-ns lh-copy measure mv0">
-    //                 {/*{JSON.stringify(display)}*/}
-    //                 {display}
-    //             </div>
-    //         </div>
-    //     </article>;
         let vertices = [];
         let verticesNomalized = [];
         transformation[image.public_id].forEach(object => {
