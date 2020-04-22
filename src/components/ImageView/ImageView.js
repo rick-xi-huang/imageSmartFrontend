@@ -60,7 +60,6 @@ class ImageView extends Component {
                 return response.json();
             })
             .then((response) => {
-                console.log(response);
                 this.setState({transformations: {
                         ...this.state.transformations,
                         [image.public_id]: {content: response, type: type}
